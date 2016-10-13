@@ -22,12 +22,12 @@ public class Main
         //print results
         if(mmgg.isPath())
         {
-        	System.out.println();
+            System.out.println();
             System.out.println("Maze was solved!");
         }
         else
         {
-        	System.out.println();
+            System.out.println();
             System.out.println("Maze could not be solved.");
         }       
     }
