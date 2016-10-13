@@ -85,11 +85,11 @@ public class MazeRecursive
 					  kk++;
 					  
 					  if(kk==2)
-				         break;				  			 
+				          break;				  			 
 				}
 				
 				if(kk==2)
-					  break;
+			        break;
 			}
 			
 			//parse ending positions
@@ -106,11 +106,11 @@ public class MazeRecursive
 							  pp++;
 							  
 							  if(pp==2)
-								  break;				  			 
+						          break;				  			 
 						}
 						
 						if(pp==2)
-							  break;
+					      break;
 					}
 					
 			inputStream.close();
