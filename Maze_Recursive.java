@@ -85,7 +85,7 @@ public class MazeRecursive
 					  kk++;
 					  
 					  if(kk==2)
-						  break;				  			 
+				         break;				  			 
 				}
 				
 				if(kk==2)
@@ -114,7 +114,6 @@ public class MazeRecursive
 					}
 					
 			inputStream.close();
-
 		}
 	  
 	  public void  initializeVisitedArray()
