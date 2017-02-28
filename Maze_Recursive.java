@@ -1,4 +1,4 @@
-/*This program uses recursionw with stacks data structure and solves a binary maze and outputs the path it takes as well as 
+/*This program uses recursion with stacks data structure and solves a binary maze and outputs the path it takes as well as 
  *whether or not the maze was solvable to being with. It reads the dimensions of a maze, 
  *the maze matrix and the starting and ending points from a text file. 
  */
