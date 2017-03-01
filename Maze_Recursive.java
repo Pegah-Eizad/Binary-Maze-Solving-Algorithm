@@ -1,5 +1,5 @@
-/*This program uses recursion with stacks data structure and solves a binary maze and outputs the path it takes as well as 
- *whether or not the maze was solvable to being with. It reads the dimensions of a maze, 
+/*This program uses recursion and solves a binary maze and outputs the path it takes as well as 
+ *whether or not the maze was solvable to begin with. It reads the dimensions of a maze, 
  *the maze matrix and the starting and ending points from a text file. 
  */
 
@@ -10,12 +10,12 @@ import java.util.*;
 
 public class MazeRecursive 
 {
-	  int rows, cols, dim;
+	  int rows, cols, dim;                    // number of rows, column, dimentions
 	  int [] dimensions = new int [2];        //stores dimensions of maze
 	  int [] startingPositions = new int [2];  //stores starting positions of maze
 	  int [] endingPositions = new int [2];    //stores ending positions of maze
-	  int [][] maze;
-	  boolean [][] visited;
+	  int [][] maze;                           //stores the binary maze 
+	  boolean [][] visited;                    // keep track of visited positions
 	  
 	  //reads and creates maze from text file, gets dimensions, values, and starting and ending positions  
 	  public void createMaze(String fileName)
@@ -38,15 +38,16 @@ public class MazeRecursive
 				dim = Integer.parseInt(line);
 				rows = (dim/10);
 				cols = (dim%10);
-				
+			
+			//initialize 2-D maze array with newly obtained dementions 	
 			maze= new int [rows][cols];
 		
 			//assign values to matrix coordinates
-
 			int size = (rows * cols);
 			int p = 0;
 			int j=0;
 			
+			//the following loop populates the binary maze from a text file
 			while(inputStream.hasNextLine())
 			{   //read line by line
 				line = inputStream.nextLine();
@@ -55,8 +56,7 @@ public class MazeRecursive
 				//assign each line to a string
 				String s = line;
 				int k=0;
-
-				  for (char c : s.toCharArray())
+				for (char c : s.toCharArray())
 				  {
 					  if (p >= size)
 						 break;
@@ -71,52 +71,51 @@ public class MazeRecursive
 					break;
 			}
 	
-			//parse starting positions 
-			int kk =0;
+			//the following loop populates the startingPositions array 
+			int index =0;
 			while(inputStream.hasNextLine())
 			{
 				line =inputStream.nextLine();
-				
 				String s = line;			
 				for (char c : s.toCharArray())
 				  {
 					  int value = Integer.parseInt(String.valueOf(c));
-					  startingPositions[kk] = value;
-					  kk++;
+					  startingPositions[index] = value;
+					  index++;
 					  
-					  if(kk==2)
+					  if(index==2)
 				          break;				  			 
 				}
 				
-				if(kk==2)
+				if(index==2)
 			        break;
 			}
 			
-			//parse ending positions
-					int pp =0;
+			//the following loop populates the endingPositions array
+					index =0;
 					while(inputStream.hasNextLine())
 					{
 						line =inputStream.nextLine();
-						
 						String s = line;			
 						for (char c : s.toCharArray())
 						  {
 							  int value = Integer.parseInt(String.valueOf(c));
-							  endingPositions[pp] = value;
-							  pp++;
+							  endingPositions[index] = value;
+							  index++;
 							  
-							  if(pp==2)
+							  if(index==2)
 						          break;				  			 
 						}
 						
-						if(pp==2)
+						if(index==2)
 					      break;
 					}
 					
 			inputStream.close();
 		}
 	  
-	  public void  initializeVisitedArray()
+	  //initializes visited array
+	  public void initializeVisitedArray()
 	  {
 	  visited = new boolean [rows][cols];
 	  }
@@ -127,7 +126,8 @@ public class MazeRecursive
 		       return (visited[x][y]);
 	  }
 	  
-	  //decides whether there is path from starting to ending positions
+	  //decides whether there is a path from starting to ending positions, solves the maze
+	  //recursive method
 	  public boolean isPath()
 	  {
 		  return isPath(startingPositions[0], startingPositions[1]);
@@ -135,11 +135,13 @@ public class MazeRecursive
 	  
 	  private boolean isPath(int x, int y)
 	  {
-		  //current location is outside the maze
+		  //if current location is outside the maze
 		  if ( x<0 || x>= rows || y <0 || y >= cols )
 			  return false;
+		//if current location is a "Wall"
 		  else if (maze[x][y] == 1)
 			  return false;
+		//if current location is already visited
 		  else if (visited [x][y] == true)  
 			  return false;
 		  
@@ -152,7 +154,9 @@ public class MazeRecursive
 		  
 		  else
 		  {  
+		     //mark the location is visited
 		     visited[x][y] = true;
+		     //print out the position 
 			  System.out.print("(" + x +"," + y + ")");	     
 		     //if there is a path from one of the neighbors then there 
 		     //is a path from current location
