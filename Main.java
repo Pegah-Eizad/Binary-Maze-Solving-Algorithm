@@ -1,5 +1,5 @@
-/*This program uses recursion with stacks data structure and solves a binary maze and outputs the path it takes as well as 
- *whether or not the maze was solvable to being with. It reads the dimensions of a maze, 
+/*This program uses recursion and solves a binary maze and outputs the path it takes as well as 
+ *whether or not the maze was solvable to begin with. It reads the dimensions of a maze, 
  *the maze matrix and the starting and ending points from a text file. 
  */
 
@@ -14,19 +14,18 @@ public class Main
     	//create new scanner object
         Scanner keyboard = new Scanner(System.in);
         //create object of MazeGame class
-        MazeRecursive  mmgg = new MazeRecursive();
+        MazeRecursive maze = new MazeRecursive();
         //read name of file
         System.out.println("Please enter the name of the maze file: ");
         String mazeFile = keyboard.next();
 
-        //call on MazeGame method
-        //System.out.println(mmgg.rows + " " + mmgg.cols);
-        mmgg.createMaze(mazeFile);
-        //System.out.println(mmgg.rows + " " + mmgg.cols);
-        mmgg.initializeVisitedArray();
+        //input the text file containing the maze to be solved 
+        //and initialize the visited array 
+        maze.createMaze(mazeFile);
+        maze.initializeVisitedArray();
 	     
-        //print results
-        if(mmgg.isPath())
+        //call the recursive method to solve the maze and print the results
+        if(maze.isPath())
         {
             System.out.println();
             System.out.println("Maze was solved!");
