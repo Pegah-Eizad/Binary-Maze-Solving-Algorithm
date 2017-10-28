@@ -10,8 +10,8 @@ The program reads the dimensions of the maze, the binary maze matrix and the sta
 
 How to use:
 
-Run the driver program named Main.java.
-The program will ask you for the name of your input file.
+Run the driver program named Main.java. </br>
+The program will ask you for the name of your input file.</br>
 Type name then press enter.
 The result will be displayed on the console :)
 
