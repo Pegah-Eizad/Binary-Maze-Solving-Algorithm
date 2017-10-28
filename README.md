@@ -12,6 +12,9 @@ How to use:
 
 Run the driver program named Main.java. </br>
 The program will ask you for the name of your input file.</br>
-Type name then press enter.
+![alt text](https://github.com/Pegah-Eizad/Binary-Maze-Solving-Algorithm/blob/master/user_input.png "input file")
+Type name then press enter.</br>
 The result will be displayed on the console :)
+![alt text](https://github.com/Pegah-Eizad/Binary-Maze-Solving-Algorithm/blob/master/user_output.png "program output")
+
 
