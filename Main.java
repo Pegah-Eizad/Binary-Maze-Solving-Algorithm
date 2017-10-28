@@ -1,7 +1,8 @@
-/*This program uses recursion and solves a binary maze and outputs the path it takes as well as 
- *whether or not the maze was solvable to begin with. It reads the dimensions of a maze, 
- *the maze matrix and the starting and ending points from a text file. 
- */
+/*
+*This program uses recursion and solves a binary maze given by a user-input text file 
+*(for formatting see the file input.txt) and outputs whether or not the maze is 
+*solvable and if it is, it outputs the path it took to solve the maze.
+*/
 
 //This code is owned by Pegah Eizadkhah and is not meant for redistribution. 
 //Main (driver) class for the maze-solving program
@@ -33,7 +34,7 @@ public class Main
         else
         {
             System.out.println();
-            System.out.println("Maze could not be solved.");
+            System.out.println("Maze could not be solved. No path from starting to ending position.");
         }       
     }
 }
