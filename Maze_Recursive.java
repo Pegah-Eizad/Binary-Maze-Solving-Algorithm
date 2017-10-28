@@ -50,68 +50,68 @@ public class MazeRecursive
 			//the following loop populates the binary maze from a text file
 			while(inputStream.hasNextLine())
 			{   //read line by line
-				line = inputStream.nextLine();
-				System.out.println();
+			    line = inputStream.nextLine();
+			    System.out.println();
 				
-				//assign each line to a string
-				String s = line;
-				int k=0;
-				for (char c : s.toCharArray())
-				  {
-					  if (p >= size)
-						 break;
-					  int value = Integer.parseInt(String.valueOf(c));
-					  maze[j][k] = value;
-					  //CHECKPOINT: parses each digit: PASS
-					  p++;
-					  k++;
-				  }
-				j++;
-				if (j == rows )
-					break;
+			    //assign each line to a string
+			    String s = line;
+			    int k=0;
+			    for (char c : s.toCharArray())
+			    {
+			       if (p >= size)
+			       break;
+			       int value = Integer.parseInt(String.valueOf(c));
+			       maze[j][k] = value;
+			       //CHECKPOINT: parses each digit: PASS
+			       p++;
+			       k++;
+			     }
+			     j++;
+			     if (j == rows )
+			     break;
 			}
 	
 			//the following loop populates the startingPositions array 
 			int index =0;
 			while(inputStream.hasNextLine())
 			{
-				line =inputStream.nextLine();
-				String s = line;			
-				for (char c : s.toCharArray())
-				  {
-					  int value = Integer.parseInt(String.valueOf(c));
-					  startingPositions[index] = value;
-					  index++;
+			    line =inputStream.nextLine();
+			    String s = line;			
+			    for (char c : s.toCharArray())
+			    {
+				 int value = Integer.parseInt(String.valueOf(c));
+			         startingPositions[index] = value;
+			         index++;
 					  
-					  if(index==2)
-				          break;				  			 
-				}
+			         if(index==2)
+				 break;				  			 
+			    }
 				
-				if(index==2)
-			        break;
+			    if(index==2)
+			    break;
 			}
 			
 			//the following loop populates the endingPositions array
-					index =0;
-					while(inputStream.hasNextLine())
-					{
-						line =inputStream.nextLine();
-						String s = line;			
-						for (char c : s.toCharArray())
-						  {
-							  int value = Integer.parseInt(String.valueOf(c));
-							  endingPositions[index] = value;
-							  index++;
+			index =0;
+			while(inputStream.hasNextLine())
+			{
+			      line =inputStream.nextLine();
+			      String s = line;			
+			      for (char c : s.toCharArray())
+			      {
+				 int value = Integer.parseInt(String.valueOf(c));
+				 endingPositions[index] = value;
+				 index++;
 							  
-							  if(index==2)
-						          break;				  			 
-						}
+				 if(index==2)
+				 break;				  			 
+			       }
 						
-						if(index==2)
-					      break;
-					}
+				if(index==2)
+			        break;
+			 }
 					
-			inputStream.close();
+		     inputStream.close();
 		}
 	  
 	  //initializes visited array
