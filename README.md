@@ -14,3 +14,12 @@ Run the driver program named Main.java
 The program will ask you for the name of your input file
 Type name then press enter
 The result will be displayed on the console :)
+
+| *Yuku haru ya*
+| *tori naki uo no*
+| *me wa namida*
+| -- **Matsuo Bashō**, The Narrow Road to Oku (*Oku no Hosomichi*),
+ Tokyo, 1996, p. 23 (Translation: Donald Keene)
+| Spring is passing by!
+| Birds are weeping and the eyes
+| of fish fill with tears.
