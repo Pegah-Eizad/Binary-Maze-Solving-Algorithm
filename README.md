@@ -15,7 +15,7 @@ The program will ask for the name of your input file: </br>
 ![alt text](https://github.com/Pegah-Eizad/Binary-Maze-Solving-Algorithm/blob/master/user_input.png "input file")
 <br></br>
 Type name then press enter.</br>
-The result will be displayed on the console :)
+The result will be displayed in the console :)
 ![alt text](https://github.com/Pegah-Eizad/Binary-Maze-Solving-Algorithm/blob/master/user_output.png "program output")
 
 
